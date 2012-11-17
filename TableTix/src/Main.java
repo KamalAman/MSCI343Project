@@ -6,14 +6,17 @@ public class Main extends PApplet
 {
 
 
+
 	  public void setup() 
 	  {
-	    size(600,600);
+		TouchClient client = new TouchClient(this, TouchSource.MOUSE);
+	    size(1024,768, P3D);
 
 	  }
 
 	  public void draw() 
 	  {
+		 
 		Zone rightPanel = new Zone();
 	    int lastDrawnScreen = 1; 
 	    int currentScreen = 2;
