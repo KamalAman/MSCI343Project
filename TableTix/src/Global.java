@@ -13,7 +13,7 @@ public class Global
 	//minute = currDate.get(Calendar.MINUTE);
 	
 	public static TouchClient client;
-	public static Zone parentZone = new Zone();
+	public static Zone fullScreenZone = new Zone();
 	public static Zone leftMain = new Zone();
 	public static Zone rightMain = new Zone();
 	public static ImageZone progressBar;
