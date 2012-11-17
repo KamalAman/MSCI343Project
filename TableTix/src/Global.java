@@ -2,7 +2,6 @@
 import processing.core.*;
 import vialab.SMT.*;
 import java.awt.*;
-import java.awt.List;
 import java.util.*;
 
 public class Global 
@@ -39,5 +38,11 @@ public class Global
 	
 	boolean popupVisible;
 	
+	int screenHeight = 768;
+	int screenWidth = 1024;
 	
+	int progressBarHeight = 35;
+	int panelHeight = screenHeight - progressBarHeight;
+	int leftPanelWidth = 296;
+	int rightPanelWidth = screenWidth - leftPanelWidth;
 }
