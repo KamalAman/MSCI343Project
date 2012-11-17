@@ -13,10 +13,10 @@ public class Global
 	//minute = currDate.get(Calendar.MINUTE);
 	
 	public static TouchClient client;
-	ImageZone progressBar;
 	public static Zone parentZone = new Zone();
 	public static Zone leftMain = new Zone();
 	public static Zone rightMain = new Zone();
+	public static ImageZone progressBar;
 	
 	//set font sizes
 	Font movieTitleFont = new Font("Century Gothic", Font.PLAIN, 24);

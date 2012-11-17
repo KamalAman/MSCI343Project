@@ -12,8 +12,9 @@ public class Main extends PApplet
 		Global.client = new TouchClient(this, TouchSource.MOUSE);
 	    size(1024,768, P3D);
 	    Global.client.add(Global.parentZone);
-	    Global.client.add(Global.leftMain);
-	    Global.client.add(Global.rightMain);
+	    Global.parentZone.add(Global.leftMain);
+	    Global.parentZone.add(Global.rightMain);
+	    Global.parentZone.add(Global.progressBar);
 	  }
 
 	  public void draw() 
