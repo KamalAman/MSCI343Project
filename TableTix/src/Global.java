@@ -7,42 +7,44 @@ import java.util.*;
 public class Global 
 {
 	//get current time
-	int hour, minute;
+	public int hour, minute;
 	//GregorianCalendar currDate = new GregorianCalendar();
 	//hour = currDate.get(Calendar.HOUR);
 	//minute = currDate.get(Calendar.MINUTE);
 	
+	public TouchClient client;
 	//ImageZone progressBar = new ImageZone();
-	Zone leftMain = new Zone();
-	Zone rightMain = new Zone();
+	public Zone parentZone = new Zone();
+	public Zone leftMain = new Zone();
+	public Zone rightMain = new Zone();
 	
 	//set font sizes
 	Font movieTitleFont = new Font("Century Gothic", Font.PLAIN, 24);
 	Font movieSummaryFont = new Font("Century Gothic", Font.PLAIN, 24);
 	Font orderSummaryFont = new Font("Century Gothic", Font.PLAIN, 24);
 		
-	PImage currentMoviePosterImage;;
-	String currentMovieTitle; 
+	public PImage currentMoviePosterImage;;
+	public String currentMovieTitle; 
 	//create list of movie times
 	
-	int generalTicketQuantity;
-	int childTicketQuantity;
-	int seniorTicketQuantity;
-	double generalTicketPrice = 10.50;
-	double childTicketPrice = 7.99; 
-	double seniorTicketPrice = 7.99;
-	double generalTicketSubTotal;
-	double childTicketSubTotal;
-	double seniorTicketSubTotal;
-	int OrderTotal;
+	public int generalTicketQuantity;
+	public int childTicketQuantity;
+	public int seniorTicketQuantity;
+	public double generalTicketPrice = 10.50;
+	public double childTicketPrice = 7.99; 
+	public double seniorTicketPrice = 7.99;
+	public double generalTicketSubTotal;
+	public double childTicketSubTotal;
+	public double seniorTicketSubTotal;
+	public int OrderTotal;
 	
-	boolean popupVisible;
+	public boolean popupVisible;
 	
-	int screenHeight = 768;
-	int screenWidth = 1024;
+	public int screenHeight = 768;
+	public int screenWidth = 1024;
 	
-	int progressBarHeight = 35;
-	int panelHeight = screenHeight - progressBarHeight;
-	int leftPanelWidth = 296;
-	int rightPanelWidth = screenWidth - leftPanelWidth;
+	public int progressBarHeight = 35;
+	public int panelHeight = screenHeight - progressBarHeight;
+	public int leftPanelWidth = 296;
+	public int rightPanelWidth = screenWidth - leftPanelWidth;
 }
