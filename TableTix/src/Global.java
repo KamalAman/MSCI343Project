@@ -17,7 +17,7 @@ public class Global
 	public static Zone leftMain = new Zone();
 	public static Zone rightMain = new Zone();
 	public static ImageZone progressBar;
-	
+	public static PApplet applet;
 	//Images
 	public static PImage welcomingScreenImage;
 	

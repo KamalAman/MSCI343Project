@@ -15,6 +15,7 @@ public class Main extends PApplet
 	    //Global.client.add(Global.rightMain);
 	    //Global.client.add(Global.progressBar);
 	    Global.welcomingScreenImage = loadImage("..//Image//TableTix_Part1.png");
+	    Global.applet = this;
 	  }
 
 	  public void draw() 
