@@ -1,6 +1,7 @@
 
 import java.awt.List;
 import java.util.*;
+
 import android.R.integer;
 import android.util.Pair;
 import processing.core.PImage;
@@ -16,10 +17,10 @@ public class Movie {
 	public String mpaaRating;
 	public String mpaaWarningMessage;
 	public String synopsis;
-	public List showTimes = new List();
+	public ArrayList<showTime> showTimes;
 	
 	public Movie(PImage poster, String title, String cast, String genre, String duration, String imdbRating,
-			String mpassWarningMessage, String synopsis, List showTimes)
+			String mpassWarningMessage, String synopsis, ArrayList<showTime> showTimes)
 	{
 		this.poster = poster;
 		this.title = title;
@@ -33,12 +34,24 @@ public class Movie {
 		this.showTimes = showTimes;
 	}
 	
-	/*public List closestThreeShowTimes(int minute, int hour)
+	public ArrayList<showTime> closestThreeShowTimes(int minute, int hour)
 	{
-		ArrayList<showTime> closestShowTimes = new List<showTime>();
-		
+		int curCount = 0;
+		ArrayList<showTime> closestShowTimes = new ArrayList<showTime>();
+		for(int i = 0; i < showTimes.size(); ++i)
+		{
+			if(showTimes.get(i).hour >= Global.hour && showTimes.get(i).minute >= Global.minute)
+			{
+				closestShowTimes.add(showTimes.get(i));
+				++curCount;
+				if(curCount == 3)
+				{
+					break;
+				}
+			}
+		}
 		
 		
 		return closestShowTimes;
-	}*/
+	}
 }

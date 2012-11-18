@@ -11,11 +11,11 @@ public class Main extends PApplet
 	  {	
 	    size(1024,768, P3D);
 	    Global.client = new TouchClient(this, TouchSource.MOUSE);
-	    //Global.client.add(Global.leftMain);
-	    //Global.client.add(Global.rightMain);
-	    //Global.client.add(Global.progressBar);
-	    Global.welcomingScreenImage = loadImage("..//Image//TableTix_Part1.png");
 	    Global.applet = this;
+	    Global.pBar = new ProgressBar();
+	    Global.lPanel = new leftPanel();
+	    Global.welcomingScreenImage = loadImage("..//Image//TableTix_Part1.png");
+
 	  }
 
 	  public void draw() 
@@ -25,18 +25,43 @@ public class Main extends PApplet
 	    background(0);
 	     switch (Global.currentScreen) {
 		case 1:
-			//movie selection screen
+			if(Global.lastDrawnScreen != Global.currentScreen)
+		    {
+				 Global.pBar.SetProgressBar();
+				 Global.client.add(Global.leftMain);
+		    }
+			
 			break;
 		case 2:
+			if(Global.lastDrawnScreen != Global.currentScreen)
+		    {
+				Global.pBar.SetProgressBar();
+		    }
+			
 			//ticket selection screen
 			break;
 		case 3:
+			if(Global.lastDrawnScreen != Global.currentScreen)
+		    {
+				Global.pBar.SetProgressBar();
+		    }
+			
 			//Concession Screen
 			break;
 		case 4:
+			if(Global.lastDrawnScreen != Global.currentScreen)
+		    {
+				Global.pBar.SetProgressBar();
+		    }
+			
 			//Check out screen
 			break;
 		case 5:
+			if(Global.lastDrawnScreen != Global.currentScreen)
+		    {
+				Global.pBar.RemoveProgressBar();
+		    }
+			
 			//Ticket Printing Screen
 			//pause for 5 seconds and witch currentScreen to 0
 			break;		
@@ -45,6 +70,7 @@ public class Main extends PApplet
 		    {
 				Global.fullScreenZone = new ImageZone("TouchToStart",  Global.welcomingScreenImage, 0, 0, 1024,768);
 				Global.client.add(Global.fullScreenZone);
+				Global.pBar.RemoveProgressBar();
 		    }
 			//Welcome screen
 			//check if variables are cleared, clear them if they are not

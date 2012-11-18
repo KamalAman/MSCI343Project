@@ -8,7 +8,8 @@ import java.util.*;
 public class Global 
 {
 	//get current time
-	public int hour, minute;
+	public static int hour = 14;
+	public static int minute = 45;
 	//GregorianCalendar currDate = new GregorianCalendar();
 	//hour = currDate.get(Calendar.HOUR);
 	//minute = currDate.get(Calendar.MINUTE);
@@ -26,9 +27,14 @@ public class Global
 	Font movieSummaryFont = new Font("Century Gothic", Font.PLAIN, 24);
 	Font orderSummaryFont = new Font("Century Gothic", Font.PLAIN, 24);
 		
-	public PImage currentMoviePosterImage;;
-	public String currentMovieTitle; 
+	public PImage currentMoviePosterImage;
+	public String currentMovieTitle;
 	//create list of movie times
+	
+	public static ProgressBar pBar;
+	public static leftPanel lPanel;
+	public static ArrayList<Movie> movies = new ArrayList<Movie>();
+	
 	
 	public int generalTicketQuantity;
 	public int childTicketQuantity;
@@ -43,13 +49,13 @@ public class Global
 	
 	public boolean popupVisible;
 	
-	public int screenHeight = 768;
-	public int screenWidth = 1024;
+	public static int screenHeight = 768;
+	public static int screenWidth = 1024;
 	
-	public int progressBarHeight = 35;
-	public int panelHeight = screenHeight - progressBarHeight;
-	public int leftPanelWidth = 296;
-	public int rightPanelWidth = screenWidth - leftPanelWidth;
+	public static int progressBarHeight = 35;
+	public static int panelHeight = screenHeight - progressBarHeight;
+	public static int leftPanelWidth = 296;
+	public static int rightPanelWidth = screenWidth - leftPanelWidth;
 	
     public static int lastDrawnScreen = -1; 
     public static int currentScreen = 0;
