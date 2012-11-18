@@ -1,6 +1,7 @@
 
 import processing.core.*;
 import vialab.SMT.*;
+
 import java.awt.*;
 import java.util.*;
 
@@ -11,7 +12,6 @@ public class Global
 	//GregorianCalendar currDate = new GregorianCalendar();
 	//hour = currDate.get(Calendar.HOUR);
 	//minute = currDate.get(Calendar.MINUTE);
-	
 	public static TouchClient client;
 	public static Zone fullScreenZone = new Zone();
 	public static Zone leftMain = new Zone();
@@ -51,6 +51,6 @@ public class Global
 	public int leftPanelWidth = 296;
 	public int rightPanelWidth = screenWidth - leftPanelWidth;
 	
-    public static int lastDrawnScreen = 0; 
+    public static int lastDrawnScreen = -1; 
     public static int currentScreen = 0;
 }

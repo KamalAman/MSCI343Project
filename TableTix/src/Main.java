@@ -6,11 +6,11 @@ public class Main extends PApplet
 {
 
 
-
+	  
 	  public void setup() 
-	  {
-		Global.client = new TouchClient(this, TouchSource.MOUSE);
+	  {	
 	    size(1024,768, P3D);
+	    Global.client = new TouchClient(this, TouchSource.MOUSE);
 	    //Global.client.add(Global.leftMain);
 	    //Global.client.add(Global.rightMain);
 	    //Global.client.add(Global.progressBar);
@@ -20,17 +20,10 @@ public class Main extends PApplet
 
 	  public void draw() 
 	  {
-		 
-		Zone rightPanel = new Zone();
-	    
+		     
 	   
-	    if(Global.lastDrawnScreen != Global.currentScreen)
-	    {
-	    	//deactivate last screen
-	    	
-	    	Global.lastDrawnScreen = Global.currentScreen;
-	    }
-	    switch (Global.currentScreen) {
+	    background(0);
+	     switch (Global.currentScreen) {
 		case 1:
 			//movie selection screen
 			break;
@@ -48,12 +41,24 @@ public class Main extends PApplet
 			//pause for 5 seconds and witch currentScreen to 0
 			break;		
 		default:
-			Global.fullScreenZone = new ImageZone("TouchToStart",  Global.welcomingScreenImage, 0, 0, 1024,768);
-			Global.client.add(Global.fullScreenZone);
+			if(Global.lastDrawnScreen != Global.currentScreen)
+		    {
+				Global.fullScreenZone = new ImageZone("TouchToStart",  Global.welcomingScreenImage, 0, 0, 1024,768);
+				Global.client.add(Global.fullScreenZone);
+		    }
 			//Welcome screen
 			//check if variables are cleared, clear them if they are not
 			break;
 		}
+	    if(Global.lastDrawnScreen != Global.currentScreen)
+	    {
+	    	//deactivate last screen
+	    	if(Global.lastDrawnScreen == 0)
+	    	{
+	    		Global.client.remove(Global.fullScreenZone);
+	    	}
+	    	Global.lastDrawnScreen = Global.currentScreen;
+	    }
 	    	
 	  }
 	 
