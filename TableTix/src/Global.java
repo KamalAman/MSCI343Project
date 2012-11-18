@@ -18,6 +18,9 @@ public class Global
 	public static Zone rightMain = new Zone();
 	public static ImageZone progressBar;
 	
+	//Images
+	public static PImage welcomingScreenImage;
+	
 	//set font sizes
 	Font movieTitleFont = new Font("Century Gothic", Font.PLAIN, 24);
 	Font movieSummaryFont = new Font("Century Gothic", Font.PLAIN, 24);

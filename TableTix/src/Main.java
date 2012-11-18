@@ -11,20 +11,21 @@ public class Main extends PApplet
 	  {
 		Global.client = new TouchClient(this, TouchSource.MOUSE);
 	    size(1024,768, P3D);
-	    Global.client.add(Global.leftMain);
-	    Global.client.add(Global.rightMain);
-	    Global.client.add(Global.progressBar);
+	    //Global.client.add(Global.leftMain);
+	    //Global.client.add(Global.rightMain);
+	    //Global.client.add(Global.progressBar);
+	    Global.welcomingScreenImage = loadImage("..//Image//TableTix_Part1.png");
 	  }
 
 	  public void draw() 
 	  {
 		 
 		Zone rightPanel = new Zone();
-	    int lastDrawnScreen = 1; 
-	    int currentScreen = 2;
+	    int lastDrawnScreen = 0; 
+	    int currentScreen = 0;
 	    
 	   
-	    if(lastDrawnScreen != currentScreen)
+	    /*if(lastDrawnScreen != currentScreen)
 	    {
 	    	//deactivate last screen
 	    }
@@ -46,11 +47,13 @@ public class Main extends PApplet
 			//pause for 5 seconds and witch currentScreen to 0
 			break;		
 		default:
+			Global.fullScreenZone = new ImageZone("TouchToStart",  Global.welcomingScreenImage, 0, 0, 1024,768);
+			Global.client.add(Global.fullScreenZone);
 			//Welcome screen
 			//check if variables are cleared, clear them if they are not
 			break;
 		}
-	    	
+	    	*/
 	  }
 	  
 	  private void resetGlobalVariables()
