@@ -50,4 +50,7 @@ public class Global
 	public int panelHeight = screenHeight - progressBarHeight;
 	public int leftPanelWidth = 296;
 	public int rightPanelWidth = screenWidth - leftPanelWidth;
+	
+    public static int lastDrawnScreen = 0; 
+    public static int currentScreen = 0;
 }

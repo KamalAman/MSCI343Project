@@ -22,15 +22,15 @@ public class Main extends PApplet
 	  {
 		 
 		Zone rightPanel = new Zone();
-	    int lastDrawnScreen = 0; 
-	    int currentScreen = 0;
 	    
 	   
-	    /*if(lastDrawnScreen != currentScreen)
+	    if(Global.lastDrawnScreen != Global.currentScreen)
 	    {
 	    	//deactivate last screen
+	    	
+	    	Global.lastDrawnScreen = Global.currentScreen;
 	    }
-	    switch (currentScreen) {
+	    switch (Global.currentScreen) {
 		case 1:
 			//movie selection screen
 			break;
@@ -54,7 +54,12 @@ public class Main extends PApplet
 			//check if variables are cleared, clear them if they are not
 			break;
 		}
-	    	*/
+	    	
+	  }
+	 
+	  public void touchTouchToStart(Zone z)
+	  {
+	      Global.currentScreen = 1;
 	  }
 	  
 	  private void resetGlobalVariables()
