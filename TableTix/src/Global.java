@@ -32,7 +32,7 @@ public class Global
 	//create list of movie times
 	
 	public static ProgressBar pBar;
-	public static ArrayList<Movie> movies = new ArrayList<Movie>();
+	public static Movie[] movies = new Movie[12];
 	
 	
 	public int generalTicketQuantity;

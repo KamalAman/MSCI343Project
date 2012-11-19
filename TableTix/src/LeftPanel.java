@@ -31,8 +31,7 @@ public class LeftPanel extends Zone{
 			fill(255);
 			textAlign(CENTER);
 			textFont(largeFont);
-			text("Please Select The Movie You Would Like To See",45,310,200,400);
-				
+			text("Please Select The Movie You Would Like To See",45,310,200,400);	
 		}
 	}	
 	

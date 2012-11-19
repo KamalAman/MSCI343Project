@@ -14,6 +14,7 @@ public class Main extends PApplet
 	    Global.pBar = new ProgressBar();
 	    Global.leftMain = new LeftPanel();
 	    Global.rightMain = new RightPanel();
+	    SetMovieInfo theMovies = new SetMovieInfo();
 	    Global.welcomingScreenImage = loadImage("..//Image//TableTix_Part1.png");
 	  }
 
@@ -26,6 +27,10 @@ public class Main extends PApplet
 				 
 				 Global.client.add(Global.leftMain);
 				 Global.client.add(Global.rightMain);
+				 for(int i = 0; i < Global.movies.length; ++i)
+				   {
+					   Global.rightMain.add(Global.movies[i]);
+				   }	
 				 Global.pBar.SetProgressBar();
 		    }
 			
@@ -82,8 +87,7 @@ public class Main extends PApplet
 	    		Global.client.remove(Global.fullScreenZone);
 	    	}
 	    	Global.lastDrawnScreen = Global.currentScreen;
-	    }
-	    	
+	    }    	
 	  }
 	  
 	  public void touchTouchToStart(Zone z)
@@ -91,4 +95,14 @@ public class Main extends PApplet
 	      Global.currentScreen = 1;
 	  }
 	  
+	  public void drawRightPanel(Zone z)
+	  {
+		  fill(221, 231, 245);
+		  rect(0, 0, z.width, z.height);
+	  }
+	  
+	  public void drawMovies(Movie z)
+	  {
+		 z.chkdraw();
+	  }
 	}
