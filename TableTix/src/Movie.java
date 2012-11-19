@@ -19,7 +19,7 @@ public class Movie {
 	public String synopsis;
 	public ArrayList<showTime> showTimes;
 	
-	public Movie(PImage poster, String title, String cast, String genre, String duration, String imdbRating,
+	public Movie(PImage poster, String title, String cast, String genre, String duration, String imdbRating, String mpaaRating,
 			String mpassWarningMessage, String synopsis, ArrayList<showTime> showTimes)
 	{
 		this.poster = poster;
