@@ -6,10 +6,22 @@ public class SetMovieInfo {
 	
 	SetMovieInfo()
 	{
-		PImage img = null;
+		PImage argoImage = Global.applet.loadImage("..//Image//Posters//argo.jpg");
+		PImage cloudatlasImage = Global.applet.loadImage("..//Image//Posters//cloudatlas.jpg");
+		PImage flightImage = Global.applet.loadImage("..//Image//Posters//flight.jpg");
+		PImage hctbImage = Global.applet.loadImage("..//Image//Posters//HereComesTheBoom.jpg");
+		PImage hoteltranImage = Global.applet.loadImage("..//Image//Posters//hoteltransylvania.jpg");
+		PImage lincolnImage = Global.applet.loadImage("..//Image//Posters//Lincoln.jpg");
+		PImage looperImage = Global.applet.loadImage("..//Image//Posters//looper.jpg");
+		PImage parannormImage = Global.applet.loadImage("..//Image//Posters//parannormalactivity4.jpg");
+		PImage pitchperfectImage = Global.applet.loadImage("..//Image//Posters//pitchperfect.jpg");
+		PImage skyfallImage = Global.applet.loadImage("..//Image//Posters//skyfall.jpg");
+		PImage tmwtifImage = Global.applet.loadImage("..//Image//Posters//themanwiththeironfists.jpg");
+		PImage wreckitralphImage = Global.applet.loadImage("..//Image//Posters//wreckitralph.jpg");
+		
 		ArrayList<showTime> sTimes = null;
 		
-		Global.movies.add(new Movie(img, "Argo", 
+		Global.movies.add(new Movie(argoImage, "Argo", 
 				"Ben Affleck, Bryan Cranston, Alan Arkin, John Goodman", 
 				"Drama/Thriller", 
 				"2h", 
@@ -23,7 +35,7 @@ public class SetMovieInfo {
 				"Tony Mendez (Affleck) comes up with a risky plan to get them safely out of the country. A plan so incredible, it could only happen in the movies."
 				, sTimes));
 		
-		Global.movies.add(new Movie(img, "Cloud Atlas", 
+		Global.movies.add(new Movie(cloudatlasImage, "Cloud Atlas", 
 				"Tom Hanks, Halle Berry, Jim Sturgess, Hugo Weaving, Jim Broadbent", 
 				"Drama/Mystery/Sci-Fi", 
 				"2h 52min", 
@@ -35,7 +47,7 @@ public class SetMovieInfo {
 				"ripples across centuries to inspire a revolution in the distant future."
 				, sTimes));
 		
-		Global.movies.add(new Movie(img, "Flight", 
+		Global.movies.add(new Movie(flightImage, "Flight", 
 				"Denzel Washington, Bruce Greenwood, Brian Geraghty, Don Cheadle, John Goodman", 
 				"Drama", 
 				"2h 19min", 
@@ -45,8 +57,20 @@ public class SetMovieInfo {
 				"When a plane malfunctions mid-flight, a pilot struggling with substance abuse makes averts disaster by making a daring crash-landing. " +
 				"At first lauded as a hero, his actions and history are called into question when the FAA begins to investigate."
 				, sTimes));		
+		
+		Global.movies.add(new Movie(hctbImage, "Here Comes The Boom", 
+				"Kevin James, Salma Hayek, Henry Winkler", 
+				"Action/Comedy", 
+				"1h 45min", 
+				"6.2", 
+				"PG", 
+				"Warning: This movie contains violence.",
+				"Former collegiate wrestler Scott Voss is a 42-year-old apathetic biology teacher in a failing high school. When cutbacks threaten to cancel " +
+				"the music program and lay off its teacher, Scott begins to raise money by moonlighting as a mixed martial arts fighter. Everyone thinks Scott is crazy - " +
+				"most of all the school nurse, Bella - but in his quest, Scott gains something he never expected as he becomes a sensation that rallies the entire school."
+				, sTimes));
 
-		Global.movies.add(new Movie(img, 
+		Global.movies.add(new Movie(hoteltranImage, 
 				"Hotel Transylvania", 
 				"Adam Sandler, Andy Samberg, Selena Gomez, Kevin James", 
 				"Animation/Comedy/Family", 
@@ -59,7 +83,7 @@ public class SetMovieInfo {
 				"friends is no problem - but his world could come crashing down when a human stumbles on the hotel for the first time and befriends Mavis."
 				, sTimes));
 		
-		Global.movies.add(new Movie(img, "Lincoln", 
+		Global.movies.add(new Movie(lincolnImage, "Lincoln", 
 				"Daniel Day-Lewis, Sally Field, David Strathairn, Tommy Lee Jones, Joseph Gordon-Levitt", 
 				"Biography/Documentary/History/War", 
 				"2h 30min", 
@@ -71,7 +95,7 @@ public class SetMovieInfo {
 				"moment will change the fate of generations to come."
 				, sTimes));
 		
-		Global.movies.add(new Movie(img, "Looper", 
+		Global.movies.add(new Movie(looperImage, "Looper", 
 				"Bruce Willis, Joseph Gordon-Levitt, Emily Blunt", 
 				"Action/Sci-Fi", 
 				"1h 58min", 
@@ -83,7 +107,7 @@ public class SetMovieInfo {
 				"life is good until the day the mob decides to \"close the loop,\" sending back Joe's future self for assassination."
 				, sTimes));
 		
-		Global.movies.add(new Movie(img, "Paranormal Activity 4", 
+		Global.movies.add(new Movie(parannormImage, "Paranormal Activity 4", 
 				"Katie Featherston, Kathryn Newton, Stephen Dunham", 
 				"Horror/Suspense", 
 				"1h 28min", 
@@ -93,7 +117,7 @@ public class SetMovieInfo {
 				"Strange things have begun happening ever since the new neighbors moved in next door."
 				, sTimes));
 		
-		Global.movies.add(new Movie(img, "Pitch Perfect ", 
+		Global.movies.add(new Movie(pitchperfectImage, "Pitch Perfect ", 
 				"Anna Kendrick, Skylar Astin, Ben Platt, Brittany Snow, Anna Camp, Rebel Wilson", 
 				"Comedy/Music", 
 				"1h 52min", 
@@ -107,7 +131,7 @@ public class SetMovieInfo {
 				"top of the cutthroat world of college music competitions."
 				, sTimes));
 		
-		Global.movies.add(new Movie(img, "Skyfall ", 
+		Global.movies.add(new Movie(skyfallImage, "Skyfall ", 
 				"Daniel Craig, Judi Dench, Javier Bardem, Ralph Fiennes, Naomie Harris", 
 				"Action/Adventure/Thriller", 
 				"2h 23min", 
@@ -118,7 +142,7 @@ public class SetMovieInfo {
 				"no matter how personal the cost."
 				, sTimes));
 		
-		Global.movies.add(new Movie(img, "The Man with the Iron Fists ", 
+		Global.movies.add(new Movie(tmwtifImage, "The Man with the Iron Fists ", 
 				"Russell Crowe, Lucy Liu, Rick Yune, RZA, Cung Le, Jamie Chung, Dave 'Batista' Batista", 
 				"Action/Adventure", 
 				"1h 36 min", 
@@ -128,7 +152,7 @@ public class SetMovieInfo {
 				"Warriors, assassins and a lone outsider hero descend on one fabled village in China for a winner-takes-all battle for a fortune in gold."
 				, sTimes));
 		
-		Global.movies.add(new Movie(img, "Wreck-It Ralph", 
+		Global.movies.add(new Movie(wreckitralphImage, "Wreck-It Ralph", 
 				"John C Reilly, Jack McBrayer, Jane Lynch, Sarah Silverman", 
 				"Animation", 
 				"1h 48min", 
@@ -138,18 +162,6 @@ public class SetMovieInfo {
 				"Wreck-It Ralph is an obsolete video game character who longs to be as beloved as his game's perfect Good Guy, Fix-It Felix. When a modern, " +
 				"first-person shooter game arrives featuring tough-as-nails Sergeant Calhoun, Ralph sneaks into the game with the hopes of winning a medal and " +
 				"proving his heroism. Unfortunately, he wrecks everything, accidentally unleashing a deadly enemy that threatens every game in the arcade."
-				, sTimes));
-		
-		Global.movies.add(new Movie(img, "Here Comes The Boom", 
-				"Kevin James, Salma Hayek, Henry Winkler", 
-				"Action/Comedy", 
-				"1h 45min", 
-				"6.2", 
-				"PG", 
-				"Warning: This movie contains violence.",
-				"Former collegiate wrestler Scott Voss is a 42-year-old apathetic biology teacher in a failing high school. When cutbacks threaten to cancel " +
-				"the music program and lay off its teacher, Scott begins to raise money by moonlighting as a mixed martial arts fighter. Everyone thinks Scott is crazy - " +
-				"most of all the school nurse, Bella - but in his quest, Scott gains something he never expected as he becomes a sensation that rallies the entire school."
 				, sTimes));
 				
 	}

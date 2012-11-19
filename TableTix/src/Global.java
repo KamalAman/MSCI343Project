@@ -32,7 +32,6 @@ public class Global
 	//create list of movie times
 	
 	public static ProgressBar pBar;
-	public static leftPanel lPanel;
 	public static ArrayList<Movie> movies = new ArrayList<Movie>();
 	
 	
@@ -77,13 +76,4 @@ public class Global
     	currentMoviePosterImage = null;
     	
     }
-    
-	  public void touchleftMain(Zone z)
-	  {
-		  
-	  }
-	  
-	 public void drawleftMain(Zone Z)
-	{
-	}
 }

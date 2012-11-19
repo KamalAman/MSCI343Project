@@ -12,22 +12,20 @@ public class Main extends PApplet
 	    Global.client = new TouchClient(this, TouchSource.MOUSE);
 	    Global.applet = this;
 	    Global.pBar = new ProgressBar();
-	    Global.leftMain = new Zone("LeftMain", 0 , Global.progressBarHeight, Global.leftPanelWidth, Global.panelHeight);
-	    Global.lPanel = new leftPanel();
+	    Global.leftMain = new LeftPanel();
+	    Global.rightMain = new RightPanel();
 	    Global.welcomingScreenImage = loadImage("..//Image//TableTix_Part1.png");
 	  }
 
 	  public void draw() 
-	  {
-		     
-	   
-	    background(150);
-	     switch (Global.currentScreen) {
+	  { 
+	    switch (Global.currentScreen) {
 		case 1:
 			if(Global.lastDrawnScreen != Global.currentScreen)
 		    {
 				 
 				 Global.client.add(Global.leftMain);
+				 Global.client.add(Global.rightMain);
 				 Global.pBar.SetProgressBar();
 		    }
 			
@@ -87,27 +85,10 @@ public class Main extends PApplet
 	    }
 	    	
 	  }
-	 
-
-	  public void touchLeftMain(Zone z)
-	  {
-		 
-	  }
-	  public void drawLeftMain(Zone z)
-	  {
-		  Global.lPanel.chkDraw(z);
-	  }
 	  
 	  public void touchTouchToStart(Zone z)
 	  {
 	      Global.currentScreen = 1;
-	  }
-	  
-
-
-	  private void resetGlobalVariables()
-	  {
-		  
 	  }
 	  
 	}
