@@ -28,7 +28,7 @@ public class Global
 	Font orderSummaryFont = new Font("Century Gothic", Font.PLAIN, 24);
 		
 	public PImage currentMoviePosterImage;
-	public String currentMovieTitle;
+	public static String currentMovieTitle;
 	//create list of movie times
 	
 	public static ProgressBar pBar;
