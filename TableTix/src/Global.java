@@ -59,4 +59,23 @@ public class Global
 	
     public static int lastDrawnScreen = -1; 
     public static int currentScreen = 0;
+    
+    public void Reset()
+    {
+    	//reset ticket prices
+    	generalTicketPrice = 0.0;
+    	childTicketPrice = 0.0;
+    	seniorTicketPrice = 0.0;
+    	
+    	//reset ticket quantities
+    	generalTicketQuantity = 0;
+    	childTicketQuantity = 0;
+    	seniorTicketQuantity = 0;
+    	
+    	//reset current movie information
+    	currentMovieTitle = "";
+    	currentMoviePosterImage = null;
+    	
+    }
+    
 }
