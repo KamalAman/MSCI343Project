@@ -5,7 +5,6 @@ import vialab.SMT.*;
 public class Main extends PApplet 
 {
 
-
 	  
 	  public void setup() 
 	  {	
@@ -13,22 +12,23 @@ public class Main extends PApplet
 	    Global.client = new TouchClient(this, TouchSource.MOUSE);
 	    Global.applet = this;
 	    Global.pBar = new ProgressBar();
+	    Global.leftMain = new Zone("LeftMain", 0 , Global.progressBarHeight, Global.leftPanelWidth, Global.panelHeight);
 	    Global.lPanel = new leftPanel();
 	    Global.welcomingScreenImage = loadImage("..//Image//TableTix_Part1.png");
-
 	  }
 
 	  public void draw() 
 	  {
 		     
 	   
-	    background(0);
+	    background(150);
 	     switch (Global.currentScreen) {
 		case 1:
 			if(Global.lastDrawnScreen != Global.currentScreen)
 		    {
-				 Global.pBar.SetProgressBar();
+				 
 				 Global.client.add(Global.leftMain);
+				 Global.pBar.SetProgressBar();
 		    }
 			
 			break;
@@ -88,11 +88,23 @@ public class Main extends PApplet
 	    	
 	  }
 	 
+
+	  public void touchLeftMain(Zone z)
+	  {
+		 
+	  }
+	  public void drawLeftMain(Zone z)
+	  {
+		  Global.lPanel.chkDraw(z);
+	  }
+	  
 	  public void touchTouchToStart(Zone z)
 	  {
 	      Global.currentScreen = 1;
 	  }
 	  
+
+
 	  private void resetGlobalVariables()
 	  {
 		  

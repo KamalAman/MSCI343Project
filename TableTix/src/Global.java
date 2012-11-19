@@ -14,9 +14,9 @@ public class Global
 	//hour = currDate.get(Calendar.HOUR);
 	//minute = currDate.get(Calendar.MINUTE);
 	public static TouchClient client;
-	public static Zone fullScreenZone = new Zone();
-	public static Zone leftMain = new Zone();
-	public static Zone rightMain = new Zone();
+	public static Zone fullScreenZone;
+	public static Zone leftMain;
+	public static Zone rightMain;
 	public static ImageZone progressBar;
 	public static PApplet applet;
 	//Images
@@ -78,4 +78,12 @@ public class Global
     	
     }
     
+	  public void touchleftMain(Zone z)
+	  {
+		  
+	  }
+	  
+	 public void drawleftMain(Zone Z)
+	{
+	}
 }
