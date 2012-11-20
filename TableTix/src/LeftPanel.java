@@ -11,7 +11,7 @@ public class LeftPanel extends Zone{
 	PFont largeFont;
 	public LeftPanel()
 	{
-	   super("LeftMain", 0 , Global.progressBarHeight, Global.leftPanelWidth, Global.panelHeight);
+	   super("LeftMain", 0 , Global.progressBarHeight + 1, Global.leftPanelWidth+1, Global.panelHeight);
 	   backgroupImage = Global.applet.loadImage("..//Image//Back Steel.png");
 	   largeFont = Global.applet.createFont("Century Gothic", 26, true);
 	}

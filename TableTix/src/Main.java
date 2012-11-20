@@ -105,4 +105,9 @@ public class Main extends PApplet
 	  {
 		 z.chkdraw();
 	  }
+	  public void touchMovies(Movie z)
+	  {
+		  Global.client.putZoneOnTop(z);
+		  z.rst(false, true, true);
+	  }
 	}
