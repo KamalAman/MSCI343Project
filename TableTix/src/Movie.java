@@ -29,7 +29,6 @@ public class Movie extends Zone{
 	public int y = 0;
 	int Y_AXIS = 1;
 	int X_AXIS = 2;
-	PFont movieFont;
 	int backgroundColor;
 	
 	public Movie(PImage poster, String title, String cast, String genre, String duration, String imdbRating, String mpaaRating,
@@ -49,7 +48,6 @@ public class Movie extends Zone{
 		this.synopsis = synopsis;
 		this.showTimes = showTimes;
 		this.currentMovie = currentMovie;
-		movieFont = Global.applet.createFont("Century Gothic", 16);
 		backgroundColor = Global.applet.color(221, 231, 245);
 		
 	}
@@ -81,8 +79,14 @@ public class Movie extends Zone{
 		image(poster, 0, 0, 110, 156);
 		fill(0);
 		textAlign(CENTER);
-		textFont(movieFont);
-		text(title,0,162,110,44);	
+		//textFont(Global.fontCent, 16);
+		textSize(16);
+		text(title,0,162,110,44);
+		if(Global.currentMovie == this)
+		{
+			fill(99,214,21,100);
+			rect(-5, -5, 120, 166, 5);	
+		}
 		
 	}
 	
@@ -112,7 +116,6 @@ public class Movie extends Zone{
 	}
 	 
 	// Draw a gradient corner by making triangles
-	// TODO: do this directly somehow; a shader?
 	// @param x X coordinate of the center of the semicircle (pixels)
 	// @param y Y coordinate of the center of the semicircle (pixels)
 	// @param rad Radius of the semicircle (pixels)

@@ -21,14 +21,14 @@ public class Global
 	public static PApplet applet;
 	//Images
 	public static PImage welcomingScreenImage;
+	public static PImage loadingScreenImage;
 	
 	//set font sizes
 	Font movieTitleFont = new Font("Century Gothic", Font.PLAIN, 24);
 	Font movieSummaryFont = new Font("Century Gothic", Font.PLAIN, 24);
 	Font orderSummaryFont = new Font("Century Gothic", Font.PLAIN, 24);
 		
-	public PImage currentMoviePosterImage;
-	public static String currentMovieTitle;
+	public static Movie currentMovie;
 	//create list of movie times
 	
 	public static ProgressBar pBar;
@@ -45,7 +45,7 @@ public class Global
 	public double childTicketSubTotal;
 	public double seniorTicketSubTotal;
 	public int OrderTotal;
-	
+	public static PFont fontCent;
 	public boolean popupVisible;
 	
 	public static int screenHeight = 768;
@@ -71,9 +71,9 @@ public class Global
     	childTicketQuantity = 0;
     	seniorTicketQuantity = 0;
     	
-    	//reset current movie information
-    	currentMovieTitle = "";
-    	currentMoviePosterImage = null;
+    	//reset current movie
+    	currentMovie = null;
     	
     }
+    
 }
