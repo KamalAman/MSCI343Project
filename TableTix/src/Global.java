@@ -5,8 +5,12 @@ import vialab.SMT.*;
 import java.awt.*;
 import java.util.*;
 
+import com.sun.org.apache.xml.internal.resolver.helpers.PublicId;
+
 public class Global 
 {
+	public static Zone TestNextZone;
+	
 	//get current time
 	public static int hour = 14;
 	public static int minute = 45;
@@ -23,10 +27,6 @@ public class Global
 	public static PImage welcomingScreenImage;
 	public static PImage loadingScreenImage;
 	
-	//set font sizes
-	Font movieTitleFont = new Font("Century Gothic", Font.PLAIN, 24);
-	Font movieSummaryFont = new Font("Century Gothic", Font.PLAIN, 24);
-	Font orderSummaryFont = new Font("Century Gothic", Font.PLAIN, 24);
 		
 	public static Movie currentMovie;
 	//create list of movie times
@@ -35,18 +35,19 @@ public class Global
 	public static Movie[] movies = new Movie[12];
 	
 	
-	public int generalTicketQuantity;
-	public int childTicketQuantity;
-	public int seniorTicketQuantity;
-	public double generalTicketPrice = 10.50;
-	public double childTicketPrice = 7.99; 
-	public double seniorTicketPrice = 7.99;
-	public double generalTicketSubTotal;
-	public double childTicketSubTotal;
-	public double seniorTicketSubTotal;
-	public int OrderTotal;
+	public static int generalTicketQuantity;
+	public static int childTicketQuantity;
+	public static int seniorTicketQuantity;
+	public static double generalTicketPrice = 10.50;
+	public static double childTicketPrice = 7.99; 
+	public static double seniorTicketPrice = 7.99;
+	public static double generalTicketSubTotal;
+	public static double childTicketSubTotal;
+	public static double seniorTicketSubTotal;
+	public static int OrderTotal;
 	public static PFont fontCent;
-	public boolean popupVisible;
+	public static boolean popupVisible;
+	public static WarningZone warningZone;
 	
 	public static int screenHeight = 768;
 	public static int screenWidth = 1024;
@@ -55,7 +56,7 @@ public class Global
 	public static int panelHeight = screenHeight - progressBarHeight;
 	public static int leftPanelWidth = 296;
 	public static int rightPanelWidth = screenWidth - leftPanelWidth;
-	
+	public static String orderSummary;
     public static int lastDrawnScreen = -1; 
     public static int currentScreen = 0;
     

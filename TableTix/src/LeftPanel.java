@@ -24,21 +24,41 @@ public class LeftPanel extends Zone{
 		image(backgroupImage,0,0, width, height); 
 		if(Global.currentMovie != null)
 		{
+			noStroke();
 			drawFuzzyRectangle(68, 50, 160, 227, 10, 20);
 			image(Global.currentMovie.poster, 78 , 60,140, 207);
 			fill(255);
 			textAlign(CENTER);
 			textSize(26);
-			text(Global.currentMovie.title,50,280,196,55);	
-			textAlign(LEFT);
-			textSize(13);
-			text(Global.currentMovie.cast,30,338,236,30);	
-			text(Global.currentMovie.genre,30,378,236,13);
-			text("Durration: " + Global.currentMovie.duration,30,392,236,13);
-			text("IMDB Rating: " + Global.currentMovie.imdbRating + ", MPAA Rating: " + Global.currentMovie.mpaaRating,30,406,236,13);
-			text(Global.currentMovie.synopsis,30,433,236,170);
-			fill(128,182,15);
-			rect(0, height - 120, width, 120);
+			text(Global.currentMovie.title,50,280,196,55);
+			
+			if(Global.currentScreen == 1 || Global.currentScreen == 0 )
+			{
+				
+				textAlign(LEFT);
+				textSize(13);
+				text(Global.currentMovie.cast,30,338,236,30);	
+				text(Global.currentMovie.genre,30,378,236,13);
+				text("Durration: " + Global.currentMovie.duration,30,392,236,13);
+				text("IMDB Rating: " + Global.currentMovie.imdbRating + ", MPAA Rating: " + Global.currentMovie.mpaaRating,30,406,236,13);
+				text(Global.currentMovie.synopsis,30,433,236,170);
+				fill(128,182,15);
+				rect(0, height - 120, width, 120);
+			}
+			else 
+			{
+				
+				fill(99, 228, 21);
+				rect(0, 340, width, 206);
+				Global.orderSummary = Global.currentMovie + "\\r\\n"; 
+				if(Global.generalTicketQuantity != 0)
+				{
+					Global.orderSummary = Global.generalTicketQuantity + " General Tickets \\t\\t" + Global.generalTicketPrice*Global.generalTicketQuantity; 
+				}
+				
+				
+				
+			}
 		}
 		else 
 		{

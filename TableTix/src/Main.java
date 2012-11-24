@@ -1,4 +1,6 @@
 
+import com.sun.security.ntlm.Client;
+
 import android.R.integer;
 import processing.core.*;
 import vialab.SMT.*;
@@ -14,7 +16,7 @@ public class Main extends PApplet
 	    size(1024,768, P3D);
 	    Global.client = new TouchClient(this, TouchSource.MOUSE);
 	    Global.applet = this;
-	    Global.fontCent = Global.applet.createFont("Century Gothic", 24,true);
+	    Global.fontCent = Global.applet.createFont("Century Gothic", 60,true);
 	    textFont( Global.fontCent);
 	    Global.pBar = new ProgressBar();
 	    Global.leftMain = new LeftPanel();
@@ -34,12 +36,11 @@ public class Main extends PApplet
 			 Global.client.add(Global.rightMain);
 			 Global.client.add(loadingZone);
 			 for(int i = 0; i < Global.movies.length; ++i)
-			   {
+			 {
 				   Global.rightMain.add(Global.movies[i]);
 				  
-			   }
+			 }
 			 ++loaded;
-			 //Global.client.putZoneOnTop(Global.fullScreenZone);
 		 }
 		 else if(loaded <= 12 && preLoad)
 		 {
@@ -51,6 +52,11 @@ public class Main extends PApplet
 		 {
 
 			 Global.currentMovie = null;
+			 for(int i = 0; i < Global.movies.length; ++i)
+			 {
+				   Global.rightMain.remove(Global.movies[i]);
+				  
+			 }
 			 Global.client.remove(Global.leftMain);
 			 Global.client.remove(Global.rightMain);
 			 Global.client.remove(loadingZone);
@@ -65,15 +71,24 @@ public class Main extends PApplet
 					 
 					 Global.client.add(Global.leftMain);
 					 Global.client.add(Global.rightMain);
-					 if(!preLoad)
-					 {
-						 for(int i = 0; i < Global.movies.length; ++i)
-						 {
-						   Global.rightMain.add(Global.movies[i]);
-						 }
-					 }
+
+					for(int i = 0; i < Global.movies.length; ++i)
+					{
+					    Global.rightMain.add(Global.movies[i]);
+					}
+
 					 Global.pBar.SetProgressBar();
 			    }
+				 if(Global.popupVisible && Global.warningZone == null)
+				 {
+					 Global.warningZone = new WarningZone();
+					 Global.client.add(Global.warningZone);
+				 }
+				 else if(!Global.popupVisible && Global.warningZone != null)
+				 {
+					 Global.client.remove(Global.warningZone);
+					 Global.warningZone = null;
+				 }
 				
 				break;
 			case 2:
@@ -128,6 +143,16 @@ public class Main extends PApplet
 		    	{
 		    		Global.client.remove(Global.fullScreenZone);
 		    	}
+		    	if(Global.lastDrawnScreen == 1)
+		    	{
+		    		Global.client.remove(Global.warningZone);
+					for(int i = 0; i < Global.movies.length; ++i)
+					{
+						   Global.rightMain.remove(Global.movies[i]);
+						  
+					}
+		    		
+		    	}
 		    	Global.lastDrawnScreen = Global.currentScreen;
 		    }    	
 		 }
@@ -149,10 +174,34 @@ public class Main extends PApplet
 	  {
 		 z.chkdraw();
 	  }
+	  
+	  public void drawWarningZone(WarningZone z)
+	  {
+		  z.chkDraw();
+	  }
+	  
+	  public void drawWarningButton(Zone z)
+	  {
+		  Global.warningZone.chkDrawWarningButton(z);
+	  }
+	  
+	  
 	  public void touchMovies(Movie z)
 	  {
 		  //Global.client.putZoneOnTop(z);
 		  //z.rst(false, true, true);
 		  Global.currentMovie = z;
+	  }
+	  
+	  public void touchLeftMain(Zone z)
+	  {
+		  if(Global.currentMovie != null)
+		  {
+			  Global.popupVisible = true;
+		  }
+	  }
+	  public void touchWarningButton(Zone z)
+	  {
+		  Global.warningZone.chkTouchWarningButton(z);
 	  }
 	}

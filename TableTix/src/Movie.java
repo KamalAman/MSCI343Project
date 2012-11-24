@@ -32,7 +32,7 @@ public class Movie extends Zone{
 	int backgroundColor;
 	
 	public Movie(PImage poster, String title, String cast, String genre, String duration, String imdbRating, String mpaaRating,
-			String mpassWarningMessage, String synopsis, ArrayList<showTime> showTimes, int currentMovie)
+			String mpaaWarningMessage, String synopsis, ArrayList<showTime> showTimes, int currentMovie)
 	{
 		super("Movies", (int)(45 + ((currentMovie - 1 )%4)*174), (int)(20 +  Math.floor((currentMovie-1)/4)*222), 110, 210);
 		x = Global.leftPanelWidth +(int)(45 + ((currentMovie - 1 )%4)*174);
