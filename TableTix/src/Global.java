@@ -8,8 +8,8 @@ public class Global
 	public static Zone TestNextZone;
 	
 	//get current time
-	public static int hour = 14;
-	public static int minute = 45;
+	public static int hour = 1;
+	public static int minute = 10;
 	//GregorianCalendar currDate = new GregorianCalendar();
 	//hour = currDate.get(Calendar.HOUR);
 	//minute = currDate.get(Calendar.MINUTE);

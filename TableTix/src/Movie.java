@@ -6,6 +6,7 @@ import javax.swing.Box.Filler;
 
 import android.R.drawable;
 import android.R.integer;
+import android.R.string;
 import android.util.Pair;
 import processing.core.PFont;
 import processing.core.PImage;
@@ -51,7 +52,7 @@ public class Movie extends Zone{
 		
 	}
 	
-	public ArrayList<showTime> closestThreeShowTimes(int minute, int hour)
+	public ArrayList<showTime> closestThreeShowTimes(int hour, int minute)
 	{
 		int curCount = 0;
 		ArrayList<showTime> closestShowTimes = new ArrayList<showTime>();
@@ -86,6 +87,19 @@ public class Movie extends Zone{
 			fill(99,214,21,100);
 			rect(-5, -5, 120, 166, 5);	
 		}
+		ArrayList<showTime> closestTimes = closestThreeShowTimes(Global.hour, Global.minute);
+		String displayShowTimeString = new String();
+		
+		for (int i = 0; i<closestTimes.size();++i)
+		{
+			displayShowTimeString += closestTimes.get(i).hour + ":" + closestTimes.get(i).minute + ", ";
+		}
+		if(displayShowTimeString.length() > 2)
+			{displayShowTimeString = displayShowTimeString.substring(0, displayShowTimeString.length() - 2);}
+		fill(0);
+		textAlign(CENTER);
+		textSize(12);
+		text(displayShowTimeString,0,200,110,16);
 		
 	}
 	
