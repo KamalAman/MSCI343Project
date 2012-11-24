@@ -1,12 +1,8 @@
 
 import processing.core.*;
 import vialab.SMT.*;
-
 import java.awt.*;
 import java.util.*;
-
-import com.sun.org.apache.xml.internal.resolver.helpers.PublicId;
-
 public class Global 
 {
 	public static Zone TestNextZone;

@@ -9,7 +9,6 @@ import android.R.integer;
 import android.util.Pair;
 import processing.core.PFont;
 import processing.core.PImage;
-import sun.net.www.content.audio.x_aiff;
 import vialab.SMT.*;
 
 

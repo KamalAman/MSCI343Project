@@ -21,7 +21,7 @@ public class RightPanel extends Zone
 		if(Global.currentScreen == 2)
 		{
 			fill(0);
-			rect(483, 0, 4, height);
+			rect(483, 0, 3, height);
 			if(getConcessions == null)
 			{
 				getConcessions = new Zone("NavButton", 500, 195, 208, 80);

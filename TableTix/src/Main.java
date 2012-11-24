@@ -1,6 +1,4 @@
 
-import com.sun.security.ntlm.Client;
-
 import android.R.integer;
 import processing.core.*;
 import vialab.SMT.*;
