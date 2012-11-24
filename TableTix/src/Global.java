@@ -20,7 +20,7 @@ public class Global
 	public static TouchClient client;
 	public static Zone fullScreenZone;
 	public static Zone leftMain;
-	public static Zone rightMain;
+	public static RightPanel rightMain;
 	public static ImageZone progressBar;
 	public static PApplet applet;
 	//Images
@@ -35,7 +35,7 @@ public class Global
 	public static Movie[] movies = new Movie[12];
 	
 	
-	public static int generalTicketQuantity;
+	public static int generalTicketQuantity = 3;
 	public static int childTicketQuantity;
 	public static int seniorTicketQuantity;
 	public static double generalTicketPrice = 10.50;
@@ -44,7 +44,7 @@ public class Global
 	public static double generalTicketSubTotal;
 	public static double childTicketSubTotal;
 	public static double seniorTicketSubTotal;
-	public static int OrderTotal;
+	public static double OrderTotal;
 	public static PFont fontCent;
 	public static boolean popupVisible;
 	public static WarningZone warningZone;
@@ -56,7 +56,10 @@ public class Global
 	public static int panelHeight = screenHeight - progressBarHeight;
 	public static int leftPanelWidth = 296;
 	public static int rightPanelWidth = screenWidth - leftPanelWidth;
-	public static String orderSummary;
+	public static ArrayList<String> orderSummary;
+	public static ArrayList<String> orderSummaryLineCost;
+	public static String orderSummaryString;
+	public static String orderSummaryLineCostString;
     public static int lastDrawnScreen = -1; 
     public static int currentScreen = 0;
     

@@ -23,7 +23,7 @@ public class WarningZone extends Zone{
 	 
 	 public void chkDraw()
 	 {
-		 fill(0,0,0,240);
+		 fill(0,0,0,220);
 		 rect(0, 0, width, height);
 		 fill(58,128,226);
 		 stroke(255);

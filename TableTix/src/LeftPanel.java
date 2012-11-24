@@ -1,4 +1,7 @@
+import java.util.ArrayList;
+
 import android.R.integer;
+import android.webkit.WebSettings.TextSize;
 import processing.core.PFont;
 import processing.core.PImage;
 import vialab.SMT.ButtonZone;
@@ -30,7 +33,7 @@ public class LeftPanel extends Zone{
 			fill(255);
 			textAlign(CENTER);
 			textSize(26);
-			text(Global.currentMovie.title,50,280,196,55);
+			text(Global.currentMovie.title,50,280,196,60);
 			
 			if(Global.currentScreen == 1 || Global.currentScreen == 0 )
 			{
@@ -47,16 +50,60 @@ public class LeftPanel extends Zone{
 			}
 			else 
 			{
-				
-				fill(99, 228, 21);
-				rect(0, 340, width, 206);
-				Global.orderSummary = Global.currentMovie + "\\r\\n"; 
-				if(Global.generalTicketQuantity != 0)
+				if(Global.currentScreen != 4)
 				{
-					Global.orderSummary = Global.generalTicketQuantity + " General Tickets \\t\\t" + Global.generalTicketPrice*Global.generalTicketQuantity; 
+					fill(99, 228, 21);
+					rect(0, 360, width, 206);
+					
+					
+					Global.orderSummary = new ArrayList<String>();
+					Global.orderSummaryLineCost = new ArrayList<String>();
+					Global.orderSummary.add(Global.currentMovie.title); 
+					Global.orderSummary.add(" "); 
+					Global.orderSummaryLineCost.add(" "); 
+					Global.orderSummaryLineCost.add(" "); 
+					Global.OrderTotal = 0;
+					if(Global.generalTicketQuantity != 0)
+					{
+						Global.orderSummary.add(Global.generalTicketQuantity + " General Tickets");
+						Global.orderSummaryLineCost.add("$" +  String.format("%.2f", Global.generalTicketPrice*Global.generalTicketQuantity));
+						Global.OrderTotal += Global.generalTicketPrice*Global.generalTicketQuantity;
+					}
+					if(Global.childTicketQuantity != 0)
+					{
+						Global.orderSummary.add(Global.childTicketQuantity + " Child Tickets");
+						Global.orderSummaryLineCost.add("$" + String.format("%.2f", Global.childTicketPrice*Global.childTicketQuantity));
+						Global.OrderTotal += Global.childTicketPrice*Global.childTicketQuantity;
+					}
+					if(Global.seniorTicketQuantity != 0)
+					{
+						Global.orderSummary.add(Global.seniorTicketQuantity + " Senior Tickets");
+						Global.orderSummaryLineCost.add("$" + String.format("%.2f", Global.seniorTicketPrice*Global.seniorTicketQuantity));
+						Global.OrderTotal += Global.seniorTicketPrice*Global.seniorTicketQuantity;
+					}
+					
+					Global.orderSummaryString = new String();
+					Global.orderSummaryLineCostString = new String();
+					for(int i = 0; i < Global.orderSummary.size(); ++i)
+					{
+						Global.orderSummaryString += Global.orderSummary.get(i) + "\r\n";
+						Global.orderSummaryLineCostString += Global.orderSummaryLineCost.get(i) + "\r\n";
+					}
+					
+					fill(0);
+					textAlign(LEFT);
+					textSize(16);
+					text(Global.orderSummaryString, 10, 365, 200, 180);
+					textAlign(RIGHT);
+					text(Global.orderSummaryLineCostString, 170, 365, width - 180, 180);
+					textAlign(LEFT);
+					fill(255);
+					textSize(24);
+					text("Total:", 10, 575, 170, 30);	
+					textAlign(RIGHT);
+					text("$" + String.format("%.2f", Global.OrderTotal), 170, 575, width - 180, 30);
+					rect(0, 600, width, 2);
 				}
-				
-				
 				
 			}
 		}

@@ -164,16 +164,16 @@ public class Main extends PApplet
 	  }
 	   
 	  
-	  public void drawRightPanel(Zone z)
+	  public void drawRightPanel(RightPanel z)
 	  {
-		  fill(221, 231, 245);
-		  rect(0, 0, z.width, z.height);
+		  z.chkDraw();
 	  }
 	  
 	  public void drawMovies(Movie z)
 	  {
 		 z.chkdraw();
 	  }
+
 	  
 	  public void drawWarningZone(WarningZone z)
 	  {
@@ -191,6 +191,12 @@ public class Main extends PApplet
 		  //Global.client.putZoneOnTop(z);
 		  //z.rst(false, true, true);
 		  Global.currentMovie = z;
+	  }
+	  
+	  
+	  public void touchNavButton(Zone z)
+	  {
+		 Global.rightMain.chkDrawTouchNavButton(z);
 	  }
 	  
 	  public void touchLeftMain(Zone z)
