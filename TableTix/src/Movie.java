@@ -3,7 +3,6 @@ import java.awt.List;
 import java.util.*;
 import processing.opengl.*;
 import javax.swing.Box.Filler;
-
 import android.R.drawable;
 import android.R.integer;
 import android.R.string;

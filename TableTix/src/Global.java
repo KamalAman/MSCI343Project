@@ -3,6 +3,8 @@ import processing.core.*;
 import vialab.SMT.*;
 import java.awt.*;
 import java.util.*;
+
+import android.R.integer;
 public class Global 
 {
 	public static Zone TestNextZone;
@@ -58,6 +60,7 @@ public class Global
 	public static String orderSummaryLineCostString;
     public static int lastDrawnScreen = -1; 
     public static int currentScreen = 0;
+    publi
     
     public void Reset()
     {
