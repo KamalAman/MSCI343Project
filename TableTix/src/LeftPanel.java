@@ -12,6 +12,7 @@ import vialab.SMT.Zone;
 
 public class LeftPanel extends Zone{
 	PImage backgroupImage;
+	int ShowTimeNum;
 	public LeftPanel()
 	{
 	   super("LeftMain", 0 , Global.progressBarHeight + 1, Global.leftPanelWidth+1, Global.panelHeight);
@@ -36,17 +37,32 @@ public class LeftPanel extends Zone{
 			text(Global.currentMovie.title,50,280,196,60);
 			
 			if(Global.currentScreen == 1 || Global.currentScreen == 0 )
-			{
-				
+			{				
 				textAlign(LEFT);
 				textSize(13);
 				text(Global.currentMovie.cast,30,338,236,30);	
 				text(Global.currentMovie.genre,30,378,236,13);
-				text("Durration: " + Global.currentMovie.duration,30,392,236,13);
+				text("Duration: " + Global.currentMovie.duration,30,392,236,13);
 				text("IMDB Rating: " + Global.currentMovie.imdbRating + ", MPAA Rating: " + Global.currentMovie.mpaaRating,30,406,236,13);
 				text(Global.currentMovie.synopsis,30,433,236,170);
 				fill(128,182,15);
 				rect(0, height - 120, width, 120);
+				
+				fill(0);
+				textAlign(LEFT);
+				textSize(18);
+				text("Select a Showtime:",10,620,300,18);
+							
+				ArrayList<showTime> closestTimes = Global.currentMovie.closestThreeShowTimes(Global.hour, Global.minute);
+				String displayShowTimeString;
+				for (int i = 0; i < closestTimes.size(); ++i)
+				{
+					 displayShowTimeString = closestTimes.get(i).hour + ":" + closestTimes.get(i).minute;
+				}
+				
+				
+				
+				
 			}
 			else 
 			{

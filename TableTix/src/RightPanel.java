@@ -49,12 +49,12 @@ public class RightPanel extends Zone
 		}
 	}
 	
-	private void drawOrderSummay()
+	private void drawOrderSummary()
 	{
 		fill(0);
 		textSize(36);
 		textAlign(CENTER);
-		text("Order Summay", 20,0, width, 60);
+		text("Order Summary", 20,0, width, 60);
 	}
 	
 	public void chkTouchNavButton(ImageZone z)

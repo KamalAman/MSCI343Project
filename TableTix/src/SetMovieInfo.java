@@ -32,9 +32,10 @@ public class SetMovieInfo {
 				"8.3", 
 				"14A", 
 				"This movie contains coarse Language, disturbing content, and tobacco use.",
-				"Chronicles the life-or-death covert operation to rescue six Americans, which unfolded behind the scenes of the Iran hostage crisis. On November 4, 1979, " +
-				"Iranian militants storm the U.S. embassy in Tehran, taking 52 Americans hostage. In the midst of the chaos, six Americans manage to slip away and find refuge in the home of the Canadian " +
-				"ambassador. Knowing it is only a matter of time before the six are found out and likely killed, a CIA specialist comes up with a risky plan to get them safely out of the country."
+				"On November 4, 1979, Iranian militants storm the U.S. embassy in Tehran, taking 52 Americans hostage. In the midst" +
+				" of the chaos, six Americans manage to slip away and find refuge in the home of the Canadian " +
+				"ambassador. Knowing it is only a matter of time before the six are found out and likely killed, a CIA " +
+				"specialist comes up with a risky plan to get them safely out of the country."
 				, sTimes, 1));
 		sTimes = new ArrayList<showTime>();
 	
@@ -84,9 +85,9 @@ public class SetMovieInfo {
 				"6.2", 
 				"PG", 
 				"This movie contains violence.",
-				"Former collegiate wrestler Scott Voss is a 42-year-old apathetic biology teacher in a failing high school. When cutbacks threaten to cancel " +
-				"the music program and lay off its teacher, Scott begins to raise money by moonlighting as a mixed martial arts fighter. Everyone thinks Scott is crazy - " +
-				"most of all the school nurse, Bella - but in his quest, Scott gains something he never expected as he becomes a sensation that rallies the entire school."
+				"Former collegiate wrestler Scott Voss is a biology teacher in a failing high school. When cutbacks threaten to cancel " +
+				"the music program and lay off its teacher, he begins to raise money by moonlighting as a mixed martial arts fighter. Everyone thinks he is crazy. " +
+				"He gains something he never expected as he rallies the entire school."
 				, sTimes, 4));
 		sTimes = new ArrayList<showTime>();
 
@@ -101,10 +102,9 @@ public class SetMovieInfo {
 				"1h 31min", 
 				"7.2", 
 				"PG","This movie contains some scary scenes and cartoon/animation action.",
-				"Welcome to the Hotel Transylvania, Dracula's lavish five-stake resort, where monsters and their families can live it up, free to be the monsters " +
-				"they are without humans to bother them. On one special weekend, Dracula has invited some of the world's most famous monsters - Frankenstein and his wife, " +
-				"the Mummy, the Invisible Man, a family of werewolves, and more - to celebrate his daughter Mavis' 118th birthday. For Drac, catering to these infamous " +
-				"friends is no problem - but his world could come crashing down when a human stumbles on the hotel for the first time and befriends Mavis."
+				"Welcome to the Hotel Transylvania, Dracula's lavish five-stake resort, where monsters can live it up, free to be the monsters " +
+				"they are without humans to bother them. Dracula has invited the most famous monsters to celebrate his daughter's birthday. His world " +
+				"could come crashing down when a human stumbles on the hotel for the first time."
 				, sTimes, 5));
 		sTimes = new ArrayList<showTime>();
 		
@@ -173,11 +173,10 @@ public class SetMovieInfo {
 				"7.6", 
 				"PG", 
 				"This movie contains offensive language and crude content.",
-				"Beca is that girl who'd rather listen to what's coming out of her headphones than what's coming out of anyone's mouth. Arriving at " +
-				"Barden University, she finds herself not right for any clique but is somehow muscled into one that she would never have picked on her own: " +
-				"alongside mean girls, sweet girls and weird girls whose only thing in common is how good they sound when they sing together. When Beca takes this " +
-				"acoustic singing group out of their world of traditional arrangements and perfect harmonies into all-new mash-ups, they fight to climb their way to the " +
-				"top of the cutthroat world of college music competitions."
+				"Beca finds herself not right for any clique. She is somehow muscled into one that she would never have picked on her own: " +
+				"alongside mean, sweet and weird girls whose only thing in common is how good they sound when they sing together. When she takes this " +
+				"group out of their world of traditional arrangements, they fight to get to the " +
+				"top of the world of college music competitions."
 				, sTimes, 9));
 		sTimes = new ArrayList<showTime>();
 		
@@ -227,7 +226,7 @@ public class SetMovieInfo {
 				"PG", 
 				"This movie contains cartoon/animation action.",
 				"Wreck-It Ralph is an obsolete video game character who longs to be as beloved as his game's perfect Good Guy, Fix-It Felix. When a modern, " +
-				"first-person shooter game arrives featuring tough-as-nails Sergeant Calhoun, Ralph sneaks into the game with the hopes of winning a medal and " +
+				"first-person shooter game arrives, Ralph sneaks into the game with the hopes of winning a medal and " +
 				"proving his heroism. Unfortunately, he wrecks everything, accidentally unleashing a deadly enemy that threatens every game in the arcade."
 				, sTimes, 12));
 		sTimes = new ArrayList<showTime>();
