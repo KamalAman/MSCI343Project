@@ -172,6 +172,10 @@ public class Main extends PApplet
 		 z.chkdraw();
 	  }
 
+	  public void drawNavButton(ImageZone z)
+	  {
+		 Global.rightMain.chkDrawNavButton(z);
+	  }
 	  
 	  public void drawWarningZone(WarningZone z)
 	  {
@@ -183,19 +187,19 @@ public class Main extends PApplet
 		  Global.warningZone.chkDrawWarningButton(z);
 	  }
 	  
-	  
 	  public void touchMovies(Movie z)
 	  {
 		  //Global.client.putZoneOnTop(z);
-		  //z.rst(false, true, true);
+		  //z.rst(false, true, true); 	
 		  Global.currentMovie = z;
 	  }
 	  
-	  
-	  public void touchNavButton(Zone z)
+	  public void touchNavButton(ImageZone z)
 	  {
-		 Global.rightMain.chkDrawTouchNavButton(z);
+		 Global.rightMain.chkTouchNavButton(z);
 	  }
+	  
+	
 	  
 	  public void touchLeftMain(Zone z)
 	  {
