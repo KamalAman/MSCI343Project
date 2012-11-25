@@ -119,6 +119,7 @@ public class LeftPanel extends Zone{
 					textAlign(RIGHT);
 					text("$" + String.format("%.2f", Global.OrderTotal), 170, 575, width - 180, 30);
 					rect(0, 600, width, 2);
+					
 				}
 				
 			}

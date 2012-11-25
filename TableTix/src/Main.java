@@ -1,4 +1,6 @@
 
+import java.util.ArrayList;
+
 import android.R.integer;
 import processing.core.*;
 import vialab.SMT.*;
@@ -22,6 +24,7 @@ public class Main extends PApplet
 	    SetMovieInfo theMovies = new SetMovieInfo();
 	    Global.welcomingScreenImage = loadImage("..//Image//TableTix_Part1.png");
 	    Global.loadingScreenImage = loadImage("..//Image//Loading Screen.png");
+	    
 	  }
 
 	  public void draw() 
@@ -182,6 +185,11 @@ public class Main extends PApplet
 		  z.chkDraw();
 	  }
 	  
+	  public void drawTicketSelect(TicketSelect z)
+		 {
+			 z.chkDraw();
+		 }
+	  
 	  public void drawWarningButton(Zone z)
 	  {
 		  Global.warningZone.chkDrawWarningButton(z);
@@ -199,7 +207,10 @@ public class Main extends PApplet
 		 Global.rightMain.chkTouchNavButton(z);
 	  }
 	  
-	
+	 public void touchTicketSelect(TicketSelect z)
+	 {
+		 z.chkTouch();
+	 }
 	  
 	  public void touchLeftMain(Zone z)
 	  {
