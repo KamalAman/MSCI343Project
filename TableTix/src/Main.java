@@ -28,7 +28,7 @@ public class Main extends PApplet
 	    Global.welcomingScreenImage = loadImage("..//Image//TableTix_Part1.png");
 	    Global.loadingScreenImage = loadImage("..//Image//Loading Screen.png");
 	    Global.backButtonImage = Global.applet.loadImage("..//Image/Buttons//navigation.png");
-	    Global.printingImage = Global.applet.loadImage("..//Image//TableTix Seating_Part15.png");
+	    Global.printingImage = Global.applet.loadImage("..//Image//TableTix w Seating_Part15.png");
 	  }
 
 	  public void draw() 
@@ -214,6 +214,10 @@ public class Main extends PApplet
 		 z.chkdraw();
 	  }
 
+	  public void drawCircleButton(CircleButton z)
+	  {
+		  z.chkDraw();
+	  }
 	  public void pressBackButton(ButtonZone z)
 	  {
 		  if(Global.currentScreen == 4)
@@ -225,6 +229,17 @@ public class Main extends PApplet
 			  --Global.currentScreen;
 		  }
 		  
+	  }
+	  
+	  public void touchCircleNumber(Zone z)
+	  {
+		  Global.circleButton.chkTouchCircleNumber(z);
+	  }
+	  
+	  public void drawCircleNumber(Zone z)
+	  {
+		  /*fill(0,0,0,100);
+		  rect(0, 0, z.width, z.height);*/
 	  }
 	  public void drawNavButton(ImageZone z)
 	  {
@@ -239,6 +254,7 @@ public class Main extends PApplet
 	  {
 		  if(System.currentTimeMillis() - printingScreenTime >= 5000)
 		  {
+			  Global.Reset();
 			  Global.currentScreen = 0;
 			  Global.client.remove(z);
 		  }

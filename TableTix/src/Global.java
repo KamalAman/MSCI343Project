@@ -10,6 +10,7 @@ public class Global
 	 public static PImage backButtonImage;
 	 public static PImage backgroupImage;
 	 public static PImage printingImage;
+	 public static CircleButton circleButton;
 	//get current time
 	public static int hour = 1;
 	public static int minute = 10;
@@ -34,7 +35,7 @@ public class Global
 	public static Movie[] movies = new Movie[12];
 	
 	
-	public static int generalTicketQuantity = 3;
+	public static int generalTicketQuantity;
 	public static int childTicketQuantity;
 	public static int seniorTicketQuantity;
 	public static double generalTicketPrice = 10.50;
@@ -67,12 +68,8 @@ public class Global
     public static String childString = "Child";
     public static String seniorString = "Senior";
     public static TicketSelect currectTicketSelected = null;
-    public void Reset()
+    public static void Reset()
     {
-    	//reset ticket prices
-    	generalTicketPrice = 0.0;
-    	childTicketPrice = 0.0;
-    	seniorTicketPrice = 0.0;
     	
     	//reset ticket quantities
     	generalTicketQuantity = 0;

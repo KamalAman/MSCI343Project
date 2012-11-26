@@ -11,14 +11,17 @@ public class TicketSelect extends ImageZone{
 	public String ticketPrice;
 	public int ticketQty;
 	public int y;
+	CircleButton circleButton;
 	static PImage blueTicket = Global.applet.loadImage("..//Image//Buttons//movie tickets blue.png");
 	static PImage greenTicket = Global.applet.loadImage("..//Image//Buttons//movie tickets green.png");
+	
 	public TicketSelect(String ticketType, String ticketPrice, int y) 
 	{
 		super("TicketSelect",blueTicket, 37, y, 410, 203);
 		this.ticketType = ticketType;
 		this.ticketPrice = ticketPrice;	
 		this.y = y;
+		Global.circleButton = new CircleButton();
 		
 	}
 	
@@ -27,6 +30,12 @@ public class TicketSelect extends ImageZone{
 		if(Global.currectTicketSelected == this){
 			if(this.img != greenTicket)
 			{
+				if(Global.circleButton.currentTicket != null)
+				{
+					Global.circleButton.currentTicket.remove(Global.circleButton);
+				}
+				Global.circleButton.currentTicket = this;
+				this.add(Global.circleButton);
 				this.img=greenTicket;
 			}
 		}
