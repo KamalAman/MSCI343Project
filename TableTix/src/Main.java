@@ -30,6 +30,7 @@ public class Main extends PApplet
 	    Global.loadingScreenImage = loadImage("..//Image//Loading Screen.png");
 	    Global.backButtonImage = Global.applet.loadImage("..//Image/Buttons//navigation.png");
 	    Global.printingImage = Global.applet.loadImage("..//Image//TableTix w Seating_Part15.png");
+	    Global.backButtonZone = new ButtonZone("BackButton",5, 640, 275, 95);
 	  }
 
 	  public void draw() 
@@ -107,7 +108,6 @@ public class Main extends PApplet
 					Global.pBar.SetProgressBar();
 					Global.showTimeZone = new ShowTimeZone();
 					Global.leftMain.add(Global.showTimeZone);
-					Global.backButtonZone = new ButtonZone("BackButton",5, 640, 275, 95);
 					Global.client.add(Global.backButtonZone);
 			    }
 				
@@ -180,7 +180,6 @@ public class Main extends PApplet
 		    	if(Global.currentScreen == 5)
 		    	{
 		    		Global.client.remove(Global.backButtonZone);
-		    		Global.backButtonZone = null;
 		    		
 		    	}
 		    	Global.lastDrawnScreen = Global.currentScreen;

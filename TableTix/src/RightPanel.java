@@ -22,6 +22,7 @@ public class RightPanel extends Zone
 	TicketSelect generalTicketSelect;
 	TicketSelect childTicketSelect;
 	TicketSelect seniorTicketSelect;
+	boolean touchedConcessions = false;
 	public RightPanel()
 	{
 	   super("RightPanel", Global.leftPanelWidth , Global.progressBarHeight,  1024 - Global.leftPanelWidth, Global.panelHeight);
@@ -42,6 +43,13 @@ public class RightPanel extends Zone
 				skipToCheckout = new ImageZone("NavButton", greyedOut, 500, 470, 208, 80);
 				this.add(getConcessions);
 				this.add(skipToCheckout);
+			}
+			if(touchedConcessions)
+			{
+				textAlign(LEFT);
+				fill(255,0,0);
+				textSize(16);
+				text("Concessions is not yet implemented", 510, 280, 198,40);
 			}
 		   if(generalTicketSelect == null)
 		   {
@@ -95,6 +103,10 @@ public class RightPanel extends Zone
 			}
 		}
 		
+		if(Global.currentScreen != 2)
+		{
+			touchedConcessions = false;
+		}
 		if(mastercard != null && Global.currentScreen != 4)
 		{
 			this.remove(mastercard);
@@ -142,12 +154,16 @@ public class RightPanel extends Zone
 	
 	public void chkTouchNavButton(ImageZone z)
 	{
-		if(z == getConcessions)
+		if(z.img == buttonIdle)
 		{
-		}
-		else if(z == skipToCheckout)
-		{
-			Global.currentScreen = 4;
+			if(z == getConcessions)
+			{
+				touchedConcessions = true;
+			}
+			else if(z == skipToCheckout)
+			{
+				Global.currentScreen = 4;
+			}
 		}
 	}
 	public void chkDrawNavButton(ImageZone z)
