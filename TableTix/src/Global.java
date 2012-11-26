@@ -6,7 +6,10 @@ import java.util.*;
 public class Global 
 {
 	public static Zone TestNextZone;
-	
+	public static ButtonZone backButtonZone;
+	 public static PImage backButtonImage;
+	 public static PImage backgroupImage;
+	 public static PImage printingImage;
 	//get current time
 	public static int hour = 1;
 	public static int minute = 10;
@@ -23,7 +26,7 @@ public class Global
 	public static PImage welcomingScreenImage;
 	public static PImage loadingScreenImage;
 	
-		
+	public static String currentShowTime;	
 	public static Movie currentMovie;
 	//create list of movie times
 	
@@ -44,6 +47,7 @@ public class Global
 	public static PFont fontCent;
 	public static boolean popupVisible;
 	public static WarningZone warningZone;
+	public static ShowTimeZone showTimeZone;
 	
 	public static int screenHeight = 768;
 	public static int screenWidth = 1024;

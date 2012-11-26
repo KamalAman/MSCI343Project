@@ -1,11 +1,11 @@
 import android.R.integer;
 
 
-public class showTime {
+public class ShowTime {
 	public int hour;
 	public int minute;
 	
-	showTime(int hour, int minute)
+	ShowTime(int hour, int minute)
 	{
 		this.hour = hour;
 		this.minute = minute;

@@ -23,15 +23,15 @@ public class Movie extends Zone{
 	public String mpaaWarningMessage;
 	public String synopsis;
 	public int currentMovie;
-	public ArrayList<showTime> showTimes;
+	public ArrayList<ShowTime> showTimes;
 	public int x = 0;
 	public int y = 0;
 	int Y_AXIS = 1;
 	int X_AXIS = 2;
 	int backgroundColor;
-	
+
 	public Movie(PImage poster, String title, String cast, String genre, String duration, String imdbRating, String mpaaRating,
-			String mpaaWarningMessage, String synopsis, ArrayList<showTime> showTimes, int currentMovie)
+			String mpaaWarningMessage, String synopsis, ArrayList<ShowTime> showTimes, int currentMovie)
 	{
 		super("Movies", (int)(45 + ((currentMovie - 1 )%4)*174), (int)(20 +  Math.floor((currentMovie-1)/4)*222), 110, 210);
 		x = Global.leftPanelWidth +(int)(45 + ((currentMovie - 1 )%4)*174);
@@ -51,10 +51,10 @@ public class Movie extends Zone{
 		
 	}
 	
-	public ArrayList<showTime> closestThreeShowTimes(int hour, int minute)
+	public ArrayList<ShowTime> closestThreeShowTimes(int hour, int minute)
 	{
 		int curCount = 0;
-		ArrayList<showTime> closestShowTimes = new ArrayList<showTime>();
+		ArrayList<ShowTime> closestShowTimes = new ArrayList<ShowTime>();
 		for(int i = 0; i < showTimes.size(); ++i)
 		{
 			if(showTimes.get(i).hour >= Global.hour && showTimes.get(i).minute >= Global.minute)
@@ -67,7 +67,6 @@ public class Movie extends Zone{
 				}
 			}
 		}
-		
 		
 		return closestShowTimes;
 	}	
@@ -86,7 +85,7 @@ public class Movie extends Zone{
 			fill(99,214,21,100);
 			rect(-5, -5, 120, 166, 5);	
 		}
-		ArrayList<showTime> closestTimes = closestThreeShowTimes(Global.hour, Global.minute);
+		ArrayList<ShowTime> closestTimes = closestThreeShowTimes(Global.hour, Global.minute);
 		String displayShowTimeString = new String();
 		
 		for (int i = 0; i<closestTimes.size();++i)
@@ -98,7 +97,13 @@ public class Movie extends Zone{
 		fill(0);
 		textAlign(CENTER);
 		textSize(12);
-		text(displayShowTimeString,0,200,110,16);
+		if(title.length() <= 12)
+		{
+			text(displayShowTimeString,0,180,110,16);
+		}
+		else {
+			text(displayShowTimeString,0,200,110,16);
+		}
 		
 	}
 	

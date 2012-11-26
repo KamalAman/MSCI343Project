@@ -11,12 +11,13 @@ import vialab.SMT.Zone;
 
 
 public class LeftPanel extends Zone{
-	PImage backgroupImage;
+	
 	int ShowTimeNum;
+
 	public LeftPanel()
 	{
 	   super("LeftMain", 0 , Global.progressBarHeight + 1, Global.leftPanelWidth+1, Global.panelHeight);
-	   backgroupImage = Global.applet.loadImage("..//Image//Back Steel.png");
+	   Global.backgroupImage = Global.applet.loadImage("..//Image//Back Steel.png");
 	}
 	
 
@@ -25,7 +26,7 @@ public class LeftPanel extends Zone{
 	public void draw() {
 		super.draw(); 
 
-		image(backgroupImage,0,0, width, height); 
+		image(Global.backgroupImage,0,0, width, height); 
 		if(Global.currentMovie != null)
 		{
 			noStroke();
@@ -52,30 +53,22 @@ public class LeftPanel extends Zone{
 				textAlign(LEFT);
 				textSize(18);
 				text("Select a Showtime:",10,620,300,18);
-							
-				ArrayList<showTime> closestTimes = Global.currentMovie.closestThreeShowTimes(Global.hour, Global.minute);
-				String displayShowTimeString;
-				for (int i = 0; i < closestTimes.size(); ++i)
-				{
-					 displayShowTimeString = closestTimes.get(i).hour + ":" + closestTimes.get(i).minute;
-				}
-				
-				
-				
-				
+
 			}
 			else 
 			{
 				if(Global.currentScreen != 4)
 				{
 					fill(99, 228, 21);
-					rect(0, 360, width, 206);
+					rect(0, 380, width, 186);
 					
 					
 					Global.orderSummary = new ArrayList<String>();
 					Global.orderSummaryLineCost = new ArrayList<String>();
 					Global.orderSummary.add(Global.currentMovie.title); 
+					Global.orderSummary.add(Global.currentShowTime);
 					Global.orderSummary.add(" "); 
+					Global.orderSummaryLineCost.add(" "); 
 					Global.orderSummaryLineCost.add(" "); 
 					Global.orderSummaryLineCost.add(" "); 
 					Global.OrderTotal = 0;
@@ -109,9 +102,9 @@ public class LeftPanel extends Zone{
 					fill(0);
 					textAlign(LEFT);
 					textSize(16);
-					text(Global.orderSummaryString, 10, 365, 200, 180);
+					text(Global.orderSummaryString, 10, 385, 200, 160);
 					textAlign(RIGHT);
-					text(Global.orderSummaryLineCostString, 170, 365, width - 180, 180);
+					text(Global.orderSummaryLineCostString, 170, 385, width - 180, 160);
 					textAlign(LEFT);
 					fill(255);
 					textSize(24);
@@ -119,7 +112,7 @@ public class LeftPanel extends Zone{
 					textAlign(RIGHT);
 					text("$" + String.format("%.2f", Global.OrderTotal), 170, 575, width - 180, 30);
 					rect(0, 600, width, 2);
-					
+
 				}
 				
 			}

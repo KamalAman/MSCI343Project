@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Timer;
 
 import android.R.integer;
 import processing.core.*;
@@ -9,8 +10,10 @@ public class Main extends PApplet
 {
 	  int loaded = 0;
 	  Zone loadingZone;
+	  long printingScreenTime;
 	  //Set preLoad to true if you want to have the system render its content before it starts functioning
 	  Boolean preLoad = true;
+
 	  public void setup() 
 	  {	
 	    size(1024,768, P3D);
@@ -24,7 +27,8 @@ public class Main extends PApplet
 	    SetMovieInfo theMovies = new SetMovieInfo();
 	    Global.welcomingScreenImage = loadImage("..//Image//TableTix_Part1.png");
 	    Global.loadingScreenImage = loadImage("..//Image//Loading Screen.png");
-	    
+	    Global.backButtonImage = Global.applet.loadImage("..//Image/Buttons//navigation.png");
+	    Global.printingImage = Global.applet.loadImage("..//Image//TableTix Seating_Part15.png");
 	  }
 
 	  public void draw() 
@@ -41,6 +45,7 @@ public class Main extends PApplet
 				   Global.rightMain.add(Global.movies[i]);
 				  
 			 }
+			 Global.client.putZoneOnTop(loadingZone);
 			 ++loaded;
 		 }
 		 else if(loaded <= 12 && preLoad)
@@ -79,11 +84,14 @@ public class Main extends PApplet
 					}
 
 					 Global.pBar.SetProgressBar();
+					 Global.showTimeZone = new ShowTimeZone();
+					 Global.leftMain.add(Global.showTimeZone);
 			    }
 				 if(Global.popupVisible && Global.warningZone == null)
 				 {
 					 Global.warningZone = new WarningZone();
 					 Global.client.add(Global.warningZone);
+					 Global.client.putZoneOnTop(Global.warningZone);
 				 }
 				 else if(!Global.popupVisible && Global.warningZone != null)
 				 {
@@ -96,6 +104,10 @@ public class Main extends PApplet
 				if(Global.lastDrawnScreen != Global.currentScreen)
 			    {
 					Global.pBar.SetProgressBar();
+					Global.showTimeZone = new ShowTimeZone();
+					Global.leftMain.add(Global.showTimeZone);
+					Global.backButtonZone = new ButtonZone("BackButton",5, 615, 275, 95);
+					Global.client.add(Global.backButtonZone);
 			    }
 				
 				//ticket selection screen
@@ -120,6 +132,11 @@ public class Main extends PApplet
 				if(Global.lastDrawnScreen != Global.currentScreen)
 			    {
 					Global.pBar.RemoveProgressBar();
+			    
+					Global.fullScreenZone = new ImageZone("PrintingScreen",Global.printingImage, 0,0, width,height);
+					Global.client.add(Global.fullScreenZone);
+					Global.client.putZoneOnTop(Global.fullScreenZone);
+					printingScreenTime = System.currentTimeMillis();
 			    }
 				
 				//Ticket Printing Screen
@@ -147,11 +164,22 @@ public class Main extends PApplet
 		    	if(Global.lastDrawnScreen == 1)
 		    	{
 		    		Global.client.remove(Global.warningZone);
+		    		Global.leftMain.remove(Global.showTimeZone);
 					for(int i = 0; i < Global.movies.length; ++i)
 					{
 						   Global.rightMain.remove(Global.movies[i]);
 						  
 					}
+		    		
+		    	}
+		    	if(Global.lastDrawnScreen == 2 && Global.currentScreen == 1)
+		    	{
+		    		Global.client.remove(Global.backButtonZone);
+		    	}
+		    	if(Global.currentScreen == 5)
+		    	{
+		    		Global.client.remove(Global.backButtonZone);
+		    		Global.backButtonZone = null;
 		    		
 		    	}
 		    	Global.lastDrawnScreen = Global.currentScreen;
@@ -170,38 +198,82 @@ public class Main extends PApplet
 		  z.chkDraw();
 	  }
 	  
+	  public void drawBackButton(Zone z)
+	  {
+		  fill(16,159,220);
+		  stroke(0);
+		  strokeWeight(2);
+		  rect(0, 0, z.width, z.height, 15);
+		  fill(255);
+		  textSize(28);
+		  textAlign(CENTER);
+		  text("Return to previous screen", 5, 20, z.width, 75);
+	  }
 	  public void drawMovies(Movie z)
 	  {
 		 z.chkdraw();
 	  }
 
+	  public void pressBackButton(ButtonZone z)
+	  {
+		  if(Global.currentScreen == 4)
+		  {
+			  Global.currentScreen = 2;
+		  }
+		  else 
+		  {
+			  --Global.currentScreen;
+		  }
+		  
+	  }
 	  public void drawNavButton(ImageZone z)
 	  {
 		 Global.rightMain.chkDrawNavButton(z);
 	  }
-	  
+	
 	  public void drawWarningZone(WarningZone z)
 	  {
 		  z.chkDraw();
 	  }
+	  public void drawPrintingScreen(ImageZone z)
+	  {
+		  if(System.currentTimeMillis() - printingScreenTime >= 5000)
+		  {
+			  Global.currentScreen = 0;
+			  Global.client.remove(z);
+		  }
+	  }
 	  
+	  public void drawShowTimeButton(ShowTimeButtons z)
+	  {
+		  z.chkDraw();
+	  }
 	  public void drawTicketSelect(TicketSelect z)
 		 {
 			 z.chkDraw();
 		 }
-	  
+	  public void drawPayment(ImageZone z)
+	  {
+	  }
 	  public void drawWarningButton(Zone z)
 	  {
 		  Global.warningZone.chkDrawWarningButton(z);
 	  }
 	  
-	  public void touchMovies(Movie z)
+	  public void drawShowTimeZone(ShowTimeZone z)
 	  {
-		  //Global.client.putZoneOnTop(z);
-		  //z.rst(false, true, true); 	
-		  Global.currentMovie = z;
+			 z.chkDraw();
 	  }
 	  
+	  public void touchMovies(Movie z)
+	  {	
+		  Global.currentMovie = z;
+	  }
+
+	  public void touchPayment(ImageZone z)
+	  {
+		  Global.currentScreen = 5;
+	  }
 	  public void touchNavButton(ImageZone z)
 	  {
 		 Global.rightMain.chkTouchNavButton(z);
@@ -211,14 +283,24 @@ public class Main extends PApplet
 	 {
 		 z.chkTouch();
 	 }
-	  
-	  public void touchLeftMain(Zone z)
+	 
+	 public void touchLeftMain(LeftPanel z)
+	 {
+		 
+	 }
+	 
+	  public void touchShowTimeButton(ShowTimeButtons z)
 	  {
 		  if(Global.currentMovie != null)
 		  {
-			  Global.popupVisible = true;
+			  if(Global.currentScreen == 1)
+			  {
+				  Global.popupVisible = true;
+			  }
+			  Global.currentShowTime = z.showTime;
 		  }
 	  }
+	  
 	  public void touchWarningButton(Zone z)
 	  {
 		  Global.warningZone.chkTouchWarningButton(z);
