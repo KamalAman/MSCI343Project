@@ -22,7 +22,6 @@ public class TicketSelect extends ImageZone{
 		this.ticketPrice = ticketPrice;	
 		this.y = y;
 		Global.circleButton = new CircleButton();
-		
 	}
 	
 	public void chkDraw()

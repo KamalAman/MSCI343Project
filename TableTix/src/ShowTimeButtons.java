@@ -18,7 +18,7 @@ public class ShowTimeButtons extends Zone{
 	public ShowTimeButtons(String showTime, int i, int y)
 	{
 		
-		super("ShowTimeButton",10 + (i%3)*(80 + 10),(int)(y + Math.floor(i/3)*40),80, 30);
+		super("ShowTimeButton", 8 + (i%3)*(90 + 5),(int)(y + Math.floor(i/3)*40),90, 36);
 		this.i = i;
 		this.showTime = showTime; 
 		
@@ -46,6 +46,6 @@ public class ShowTimeButtons extends Zone{
 		textAlign(CENTER);
 		fill(0);
 		textSize(12);
-		text(showTime, 0, 10, width, 30);
+		text(showTime, 0, 14, width, 30);
 	}
 }

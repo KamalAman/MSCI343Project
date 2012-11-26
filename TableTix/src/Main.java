@@ -107,7 +107,7 @@ public class Main extends PApplet
 					Global.pBar.SetProgressBar();
 					Global.showTimeZone = new ShowTimeZone();
 					Global.leftMain.add(Global.showTimeZone);
-					Global.backButtonZone = new ButtonZone("BackButton",5, 615, 275, 95);
+					Global.backButtonZone = new ButtonZone("BackButton",5, 640, 275, 95);
 					Global.client.add(Global.backButtonZone);
 			    }
 				

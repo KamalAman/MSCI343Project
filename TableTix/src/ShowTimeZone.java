@@ -20,10 +20,10 @@ public class ShowTimeZone extends Zone
 		{
 			if(Global.currentScreen == 1)
 			{
-				y=640;
+				y=690;
 			}
 			else {
-				y = 340;
+				y = 345;
 			}
 			lastDrawnScreen = Global.currentScreen;
 			selectedMovie = Global.currentMovie;

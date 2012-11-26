@@ -33,7 +33,7 @@ public class Movie extends Zone{
 	public Movie(PImage poster, String title, String cast, String genre, String duration, String imdbRating, String mpaaRating,
 			String mpaaWarningMessage, String synopsis, ArrayList<ShowTime> showTimes, int currentMovie)
 	{
-		super("Movies", (int)(45 + ((currentMovie - 1 )%4)*174), (int)(20 +  Math.floor((currentMovie-1)/4)*222), 110, 210);
+		super("Movies", (int)(45 + ((currentMovie - 1 )%4)*174), (int)(30 +  Math.floor((currentMovie-1)/4)*232), 110, 210);
 		x = Global.leftPanelWidth +(int)(45 + ((currentMovie - 1 )%4)*174);
 		y = Global.progressBarHeight  + (int)(20 +  Math.floor((currentMovie-1)/4)*222);
 		this.poster = poster;
@@ -97,7 +97,7 @@ public class Movie extends Zone{
 		fill(0);
 		textAlign(CENTER);
 		textSize(12);
-		if(title.length() <= 12)
+		if(title.length() <= 14)
 		{
 			text(displayShowTimeString,0,180,110,16);
 		}

@@ -16,7 +16,7 @@ public class LeftPanel extends Zone{
 
 	public LeftPanel()
 	{
-	   super("LeftMain", 0 , Global.progressBarHeight + 1, Global.leftPanelWidth+1, Global.panelHeight);
+	   super("LeftMain", 0 , Global.progressBarHeight + 1, Global.leftPanelWidth+1, 768);
 	   Global.backgroupImage = Global.applet.loadImage("..//Image//Back Steel.png");
 	}
 	
@@ -35,24 +35,24 @@ public class LeftPanel extends Zone{
 			fill(255);
 			textAlign(CENTER);
 			textSize(26);
-			text(Global.currentMovie.title,50,280,196,60);
+			text(Global.currentMovie.title,50,285,196,60);
 			
 			if(Global.currentScreen == 1 || Global.currentScreen == 0 )
 			{				
 				textAlign(LEFT);
 				textSize(13);
-				text(Global.currentMovie.cast,30,338,236,30);	
-				text(Global.currentMovie.genre,30,378,236,13);
-				text("Duration: " + Global.currentMovie.duration,30,392,236,13);
-				text("IMDB Rating: " + Global.currentMovie.imdbRating + ", MPAA Rating: " + Global.currentMovie.mpaaRating,30,406,236,13);
-				text(Global.currentMovie.synopsis,30,433,236,170);
+				text(Global.currentMovie.cast,30,348,236,30);	
+				text(Global.currentMovie.genre,30,393,236,13);
+				text("Duration: " + Global.currentMovie.duration,30,407,236,13);
+				text("IMDB Rating: " + Global.currentMovie.imdbRating + ", MPAA Rating: " + Global.currentMovie.mpaaRating,30,421,236,13);
+				text(Global.currentMovie.synopsis,30,453,236,190);
 				fill(128,182,15);
 				rect(0, height - 120, width, 120);
 				
 				fill(0);
 				textAlign(LEFT);
 				textSize(18);
-				text("Select a Showtime:",10,620,300,18);
+				text("Select a Showtime:",10,660,300,18);
 
 			}
 			else 
@@ -60,7 +60,7 @@ public class LeftPanel extends Zone{
 				if(Global.currentScreen != 4)
 				{
 					fill(99, 228, 21);
-					rect(0, 380, width, 186);
+					rect(0, 390, width, 186);
 					
 					
 					Global.orderSummary = new ArrayList<String>();
@@ -102,16 +102,16 @@ public class LeftPanel extends Zone{
 					fill(0);
 					textAlign(LEFT);
 					textSize(16);
-					text(Global.orderSummaryString, 10, 385, 200, 160);
+					text(Global.orderSummaryString, 10, 395, 200, 160);
 					textAlign(RIGHT);
-					text(Global.orderSummaryLineCostString, 170, 385, width - 180, 160);
+					text(Global.orderSummaryLineCostString, 170, 395, width - 180, 160);
 					textAlign(LEFT);
 					fill(255);
 					textSize(24);
-					text("Total:", 10, 575, 170, 30);	
+					text("Total:", 10, 585, 170, 30);	
 					textAlign(RIGHT);
-					text("$" + String.format("%.2f", Global.OrderTotal), 170, 575, width - 180, 30);
-					rect(0, 600, width, 2);
+					text("$" + String.format("%.2f", Global.OrderTotal), 170, 585, width - 180, 30);
+					rect(0, 615, width, 2);
 
 				}
 				
@@ -122,7 +122,7 @@ public class LeftPanel extends Zone{
 			fill(255);
 			textAlign(CENTER);
 			textFont(Global.fontCent, 26);
-			text("Please Select The Movie You Would Like To See",45,310,200,400);	
+			text("Please Select The Movie You Would Like To See",45,330,200,400);	
 		}
 	}	
 	
