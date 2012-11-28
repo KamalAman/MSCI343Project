@@ -11,12 +11,10 @@ public class Global
 	 public static PImage backgroupImage;
 	 public static PImage printingImage;
 	 public static CircleButton circleButton;
-	//get current time
+	 
 	public static int hour = 1;
 	public static int minute = 10;
-	//GregorianCalendar currDate = new GregorianCalendar();
-	//hour = currDate.get(Calendar.HOUR);
-	//minute = currDate.get(Calendar.MINUTE);
+	
 	public static TouchClient client;
 	public static Zone fullScreenZone;
 	public static Zone leftMain;

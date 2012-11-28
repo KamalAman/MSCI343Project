@@ -207,7 +207,7 @@ public class SetMovieInfo {
 		sTimes.add(new ShowTime(5, 30));
 		sTimes.add(new ShowTime(8, 05));
 		sTimes.add(new ShowTime(10, 35));		
-		Global.movies[11] = (new Movie(wreckitralphImage, "Wreck-It Ralph", 
+		Global.movies[11] = (new Movie(wreckitralphImage, "Wreck-It  Ralph", 
 				"John C Reilly, Jack McBrayer, Jane Lynch, Sarah Silverman", 
 				"Animation", 
 				"1h 48min", 
