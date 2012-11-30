@@ -17,7 +17,7 @@ public class Main extends PApplet
 	  public void setup() 
 	  {	
 	    size(1024,768, P3D);
-	    Global.client = new TouchClient(this, TouchSource.MOUSE);
+	    Global.client = new TouchClient(this, TouchSource.SMART);
 	    
 	    Global.applet = this;
 	    Global.fontCent = Global.applet.createFont("Century Gothic", 60,true);
@@ -321,6 +321,8 @@ public class Main extends PApplet
 	  {
 		  Global.warningZone.chkTouchWarningButton(z);
 	  }
+	  
+	  
 	  public static void main(String args[]) {
 		    PApplet.main(new String[] { "--present", "Main" });
 		  }
